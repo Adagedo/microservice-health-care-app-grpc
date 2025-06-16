@@ -11,6 +11,10 @@
 	<groupId>com.adagedo_softengineer</groupId>
 	<artifactId>grpc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>patient-service</module>
+	</modules>
 	<name>grpc</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
