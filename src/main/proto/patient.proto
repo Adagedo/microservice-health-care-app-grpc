@@ -22,6 +22,9 @@ message PatientRegistrationResponse {
     string patient_id=1;
     string message=2;
 }
+message GetPatientDetailRequest {
+    string patient_id =1;
+}
 
 message GetPatientDetailsResponse {
     int64 patient_id=1;
