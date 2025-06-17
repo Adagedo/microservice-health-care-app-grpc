@@ -16,6 +16,7 @@
 		<module>patient-service</module>
 		<module>doctor-service</module>
 		<module>common-proto</module>
+		<module>appointment-service</module>
 	</modules>
 	<name>grpc</name>
 	<description>Demo project for Spring Boot</description>
