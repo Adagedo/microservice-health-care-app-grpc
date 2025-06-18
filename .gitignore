@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+patient-service/.env
+doctor-service/.env
+appointment-service/.env

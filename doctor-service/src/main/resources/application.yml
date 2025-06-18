@@ -1,0 +1,17 @@
+spring:
+  config:
+    import: optional:dotenv:.env
+
+  datasource:
+    url: jdbc:mysql://${DATABASE_HOST_NAME}:${DATABASE_PORT_NUMBER}/${DATABASE_NAME}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update 
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
