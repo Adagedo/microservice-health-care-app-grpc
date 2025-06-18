@@ -50,7 +50,7 @@ public class PatientService extends PatientServiceImplBase{
         if (patient.isPresent()) {
             var p = patient.get();
             responseObserver.onNext(GetPatientDetailsResponse.newBuilder()
-                .setPatientId(1)
+                .setPatientId(p.getId())
                 .setFirstName(p.getFirst_name())
                 .setLastName(p.getLast_name())
                 .setEmail(p.getEmail())
