@@ -11,14 +11,14 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 @Entity
 public class Patient {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private String id;
 
     private String first_name;
     private String last_name;
