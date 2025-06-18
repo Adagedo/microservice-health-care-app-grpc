@@ -18,7 +18,7 @@ public class Patient {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Integer id;
 
     private String first_name;
     private String last_name;
