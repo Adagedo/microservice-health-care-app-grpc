@@ -4,7 +4,7 @@ option java_multiple_files = true;
 package com.adagedo_softengineer.doctor;
 
 
-service ServiceName {
+service DoctorService {
     rpc RegiterDoctor (DoctorRegistrationRequest) returns (DoctorRegistrationResponse);
     rpc GetDoctorDetails (GetDoctorDetailsRequest) returns (GetDoctorDetailsResponse);
 }
