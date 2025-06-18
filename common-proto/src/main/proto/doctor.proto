@@ -17,7 +17,7 @@ message DoctorRegistrationRequest {
     string address=5;
 }
 
-message PatientRegistrationResponse{
+message DoctorRegistrationResponse{
     int32 doctor_id=1;
     string message=2;
 }
