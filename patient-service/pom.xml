@@ -13,13 +13,15 @@
         <dependency>
             <groupId>com.adagedo_softengineer</groupId>
             <artifactId>common-proto</artifactId>
-            <version>1.0.0</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <groupId>com.adagedo_softengineer</groupId>
     <artifactId>patient-service</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
