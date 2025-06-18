@@ -1,0 +1,36 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package com.adagedo_softengineer.doctor;
+
+
+service ServiceName {
+    rpc RegiterDoctor (DoctorRegistrationRequest) returns (DoctorRegistrationResponse);
+    rpc GetDoctorDetails (GetDoctorDetailsRequest) returns (GetDoctorDetailsResponse);
+}
+
+message DoctorRegistrationRequest {
+    string first_name=1;
+    string last_name=2;
+    string email=3;
+    string phone=4;
+    string address=5;
+}
+
+message PatientRegistrationResponse{
+    int32 doctor_id=1;
+    string message=2;
+}
+
+message GetDoctorDetailsRequest {
+    int32 doctor_id=1;
+}
+
+message GetDoctorDetailsResponse{
+    int32 doctor_id=1;
+    string first_name=2;
+    string last_name=3;
+    string email=4;
+    string phone=5;
+    string address=6;
+}
