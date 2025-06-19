@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package com.adagedo_softengineer.appointment;
+
+option java_multiple_files = true;
+
+service AppointmentService {
+    rpc BookAppointment (BookAppointmentRequest) returns (BookAppointmentResponse);
+    rpc GetAppointmentAvailability (AppointmentAvailabilityRequest) returns (stream AppointmentAvailabilityResponse);
+}
+
+message BookAppointmentRequest {
+    
+    int32 doctor_id=1;
+    string patient_id=2;
+    string appointment_date=3;
+    string appointment_time=4;
+    string purpose=5;
+}
+
+message BookAppointmentResponse {
+    
+    int32 appointment_id=1;
+    string message = 2;
+}
+
+message AppointmentAvailabilityRequest {
+    int32 doctor_id=1;
+}
+
+message AppointmentSlot {
+
+    string appointment_date=1;
+    string appointment_time=2;
+    bool is_available=3;
+}
+
+message AppointmentAvailabilityResponse {
+    
+    string available_as_of=1;
+    repeated AppointmentSlot response =2;
+}
