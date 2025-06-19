@@ -7,8 +7,12 @@ package com.adagedo_softengineer.patient;
 service PatientService {
     rpc RegisterPatient (PatientRegistrationRequest) returns (PatientRegistrationResponse);
     rpc GetPatientDetails (GetPatientDetailRequest) returns (GetPatientDetailsResponse);
+    rpc StreamPatient (stream PatientRegistrationRequest) returns (Empty);
 }
 
+message Empty{
+
+}
 
 message PatientRegistrationRequest {
     string first_name=1;
