@@ -70,13 +70,35 @@ grpcurl -plaintext -d'{
     "email" : "smaith@gmail.com",
     "phone": "+234-2344-995-531", 
     "address": "123 St peter"
-}' localhost:9090 com.adagedo_softengineer.patient.Patient/RegisterDoctor
+}' localhost:9090 com.adagedo_softengineer.doctor.Doctor/RegisterDoctor
 ```
 
 To get a doctors info:
 ```bash
 grpcurl -plaintext -d'{
     "id":1
-}' localhost:9090 com.adagedo_softengineer.patient.Patient/GetDoctorDetails
+}' localhost:9090 com.adagedo_softengineer.doctor.Doctor/GetDoctorDetails
+```
+
+### Appointment Service Calls
+
+To get Appointment Avalibility -Server Streaming
+
+```bash
+grpcurl -plaintext -d'{
+    "id":1
+}' localhost:9090 com.adagedo_softengineer.appointment.Appointment/GetAppointmentAvalibility
+```
+
+To Book an Appointment
+
+```bash
+grpcurl -plaintext -d'{
+    "doctor_id":4, 
+    "patient_id" :2, 
+    "appointment_date" : "2025-03-05",
+    "appointment_time": "10:00", 
+    "purpose": "Monthly checkup"
+}' localhost:9090 com.adagedo_softengineer.doctor.Doctor/RegisterDoctor
 ```
 
