@@ -1,4 +1,4 @@
-# microservice with gRPC api.
+# SpringBoot Health-care Application Microservice with gRPC.
 
 ## what Excalty is gRPC???
 
