@@ -38,6 +38,8 @@ grpcui -plaintext localhost:9090
 
 ### Register a patient
 
+to register a patient run:
+
 ```bash
 grpcurl -plaintext -d'{
     "first_name":"Adagedo", 
@@ -47,3 +49,11 @@ grpcurl -plaintext -d'{
     "address": "123 St peter"
 }' localhost:9090 com.adagedo_softengineer.patient.Patient/RegisterPatient
 ```
+
+### Get a petient
+
+
+```bash
+grpcurl -plaintext -d'{
+    "id":1
+}' localhost:9090 com.adagedo_softengineer.patient.Patient/GetPatient
