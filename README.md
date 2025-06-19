@@ -51,9 +51,34 @@ grpcurl -plaintext -d'{
 ```
 
 ### Get a petient
-
+to a patients info
 
 ```bash
 grpcurl -plaintext -d'{
     "id":1
-}' localhost:9090 com.adagedo_softengineer.patient.Patient/GetPatient
+}' localhost:9090 com.adagedo_softengineer.patient.Patient/GetPatientDetails
+```
+
+### Doctor Service Calls
+
+### Register Doctor call
+To register a doctor:
+
+```bash
+grpcurl -plaintext -d'{
+    "first_name":"James", 
+    "last_name" : "Smith", 
+    "email" : "smaith@gmail.com",
+    "phone": "+234-2344-995-531", 
+    "address": "123 St peter"
+}' localhost:9090 com.adagedo_softengineer.patient.Patient/RegisterDoctor
+```
+### GetDoctorDetail
+
+To get a doctors info:
+```bash
+grpcurl -plaintext -d'{
+    "id":1
+}' localhost:9090 com.adagedo_softengineer.patient.Patient/GetDoctorDetails
+```
+
