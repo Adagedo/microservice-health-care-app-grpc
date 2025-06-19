@@ -99,7 +99,15 @@ public class DoctorService extends DoctorServiceImplBase {
             }
 
             @Override
-            public void onCompleted(){
+            public void onCompleted() {
+                String message = "deliverd";
+                MessageRequest response = MessageRequest.newBuilder()
+                    .setMessage(message)
+                    .setFrom("Doctor")
+                    .setTo("Patient")
+                    .setTimestamp(LocalDateTime.now().toString())
+                    .build();
+                responseObserver.onNext(response);
                 responseObserver.onCompleted();
             }
 
