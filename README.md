@@ -123,3 +123,23 @@ grpcurl -d @ -plaintext localhost:9090 com.adagedo_softengineer.patient.Patient/
 } 
 EOM
 ```
+
+## Chat with Doctor - Bidirectional Streaming
+
+run 
+```bash
+grpcurl -d @ -plaintext localhost:9090 com.adagedo_softengineer.doctor.DoctorService/Chat <<EOM
+{
+    "message":"Hii, Doctor", 
+    "from" : "Patient", 
+    "to" : "Doctor", 
+    "timestamp": "2024-10-01T12-00-002"
+} 
+{
+    "message":" How are you doing??", 
+    "from" : "Patient", 
+    "to" : "Doctor", 
+    "timestamp": "2024-10-01T12-00-002"
+} 
+EOM
+```
