@@ -99,6 +99,27 @@ grpcurl -plaintext -d'{
     "appointment_date" : "2025-03-05",
     "appointment_time": "10:00", 
     "purpose": "Monthly checkup"
-}' localhost:9090 com.adagedo_softengineer.doctor.Doctor/RegisterDoctor
+}' localhost:9090 com.adagedo_softengineer.appointment.Appointment/BookAppointment
 ```
 
+## Stream patients -Client Streaming
+
+run 
+```bash
+grpcurl -d -plaintext localhost:9090 com.adagedo_softengineer.patient.Patient/StreamPatients <<EOM
+{
+    "first_name":"James", 
+    "last_name" : "Smith", 
+    "email" : "smaith@gmail.com",
+    "phone": "+234-2344-995-531", 
+    "address": "123 St peter"
+} 
+{
+    "first_name":"sam", 
+    "last_name" : "Solomon", 
+    "email" : "sam@gmail.com",
+    "phone": "+234-2344-995-531", 
+    "address": "123 St peter"
+} 
+EOM
+```
