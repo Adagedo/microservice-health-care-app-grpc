@@ -1,5 +1,6 @@
 package com.adagedo_softengineer.service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import com.adagedo_softengineer.doctor.DoctorRegistrationResponse;
 import com.adagedo_softengineer.doctor.DoctorServiceGrpc.DoctorServiceImplBase;
 import com.adagedo_softengineer.doctor.GetDoctorDetailsRequest;
 import com.adagedo_softengineer.doctor.GetDoctorDetailsResponse;
+import com.adagedo_softengineer.doctor.MessageRequest;
 import com.adagedo_softengineer.model.Doctor;
 import com.adagedo_softengineer.repo.DoctorRepository;
 
@@ -70,6 +72,38 @@ public class DoctorService extends DoctorServiceImplBase {
         responseObserver.onCompleted();
             
 
+    }
+
+    // client streamig and server streaming implementations 
+    @Override
+    public StreamObserver<MessageRequest> chat(StreamObserver<MessageRequest> responseObserver) {
+
+        return new StreamObserver<MessageRequest>(){
+
+            @Override 
+            public void onNext(MessageRequest chatMessageRequest){
+
+                String message = "message";
+                MessageRequest response = MessageRequest.newBuilder()
+                    .setMessage(message)
+                    .setFrom("Doctor")
+                    .setTo("Patient")
+                    .setTimestamp(LocalDateTime.now().toString())
+                    .build();
+                responseObserver.onNext(response);
+            }
+
+            @Override
+            public void onError(Throwable t){
+                responseObserver.onError(t);
+            }
+
+            @Override
+            public void onCompleted(){
+                responseObserver.onCompleted();
+            }
+
+        };
     }
 
 
