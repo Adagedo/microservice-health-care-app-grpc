@@ -21,3 +21,29 @@ gRPC enables communication between wide range of device ranging from mobile, dec
 gRPC leverages protocol buffers for code generation, data serializations and interface generation.
 All gRPC language implementations leverages the protobuff plugin to generate interface, therefore this languages can interact with each others.
 Protocol buffers uses binary encodings and its reduces data size during data transfer and serializations.
+
+## RPC calls
+
+### Patient Services calls
+
+#### List Service 
+```bash
+grpcurl -plaintext localhost:9090 list
+```
+
+#### gRPC UI 
+```bash
+grpcui -plaintext localhost:9090
+```
+
+### Register a patient
+
+```bash
+grpcurl -plaintext -d'{
+    "first_name":"Adagedo", 
+    "last_name" : "Israel", 
+    "email" : "ada@gmail.com",
+    "phone": "+234-8160-995-531", 
+    "address": "123 St peter"
+}' localhost:9090 com.adagedo_softengineer.patient.Patient/RegisterPatient
+```
