@@ -106,7 +106,7 @@ grpcurl -plaintext -d'{
 
 run 
 ```bash
-grpcurl -d -plaintext localhost:9090 com.adagedo_softengineer.patient.Patient/StreamPatients <<EOM
+grpcurl -d @ -plaintext localhost:9090 com.adagedo_softengineer.patient.Patient/StreamPatients <<EOM
 {
     "first_name":"James", 
     "last_name" : "Smith", 
