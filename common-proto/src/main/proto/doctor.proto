@@ -7,6 +7,14 @@ package com.adagedo_softengineer.doctor;
 service DoctorService {
     rpc RegiterDoctor (DoctorRegistrationRequest) returns (DoctorRegistrationResponse);
     rpc GetDoctorDetails (GetDoctorDetailsRequest) returns (GetDoctorDetailsResponse);
+    rpc Chat(stream MessageRequest) returns (stream MessageRequest);
+}
+
+message MessageRequest {
+    string message = 3;
+    string from = 1;
+    string to = 2;
+    string timestamp = 4;
 }
 
 message DoctorRegistrationRequest {
