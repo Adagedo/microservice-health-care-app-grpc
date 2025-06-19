@@ -61,7 +61,6 @@ grpcurl -plaintext -d'{
 
 ### Doctor Service Calls
 
-### Register Doctor call
 To register a doctor:
 
 ```bash
@@ -73,7 +72,6 @@ grpcurl -plaintext -d'{
     "address": "123 St peter"
 }' localhost:9090 com.adagedo_softengineer.patient.Patient/RegisterDoctor
 ```
-### GetDoctorDetail
 
 To get a doctors info:
 ```bash
