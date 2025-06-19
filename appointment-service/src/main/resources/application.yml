@@ -24,6 +24,6 @@ spring:
     client:
       channels:
         doctorService:
-          address: 0.0.0.0.8080
+          address: GRPC_DOCTOR_ADDRESS
         patientService:
-          address: 0.0.0.0.0.8081
+          address: GRPC_PATIENT_ADDRESS

@@ -12,7 +12,7 @@ service AppointmentService {
 message BookAppointmentRequest {
     
     int32 doctor_id=1;
-    string patient_id=2;
+    int32 patient_id=2;
     string appointment_date=3;
     string appointment_time=4;
     string purpose=5;
